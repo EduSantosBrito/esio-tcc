@@ -1,0 +1,69 @@
+{
+    "settings": {
+        "import/extensions": [
+            ".js",
+            ".jsx",
+            ".ts",
+            ".tsx"
+        ],
+        "import/parsers": {
+            "@typescript-eslint/parser": [
+                ".ts",
+                ".tsx"
+            ]
+        },
+        "import/resolver": {
+            "node": {
+                "extensions": [
+                    ".js",
+                    ".jsx",
+                    ".ts",
+                    ".tsx"
+                ]
+            }
+        }
+    },
+    "rules": {
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": "error",
+        "no-useless-constructor": "off",
+        "import/no-unresolved": "off",
+        "@typescript-eslint/no-useless-constructor": "error",
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".tsx"
+                ]
+            }
+        ],
+        // Indent with 4 spaces
+        "indent": [
+            "error",
+            4
+        ],
+        // Indent JSX with 4 spaces
+        "react/jsx-indent": [
+            "error",
+            4
+        ],
+        // Indent props with 4 spaces
+        "react/jsx-indent-props": [
+            "error",
+            4
+        ],
+        "no-underscore-dangle": [
+            2,
+            {
+                "allow": [
+                    "_id"
+                ]
+            }
+        ]
+    },
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "extends": "airbnb"
+}
