@@ -7,7 +7,7 @@ function usePages() {
 
     const fetchData = useCallback(() => {
         setLoading(true);
-        fetch(`http://localhost:3000/pages`)
+        fetch(`http://0.0.0.0:3000/pages`)
             .then((result) => result.json())
             .then((result) => {
                 setPages(result);

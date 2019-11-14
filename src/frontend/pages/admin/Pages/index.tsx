@@ -20,7 +20,7 @@ function Pages() {
     }
 
     function handlePageDelete(_id) {
-        fetch(`localhost:3000/pages/${_id}`, { method: 'DELETE' }).then(() => fetchData());
+        fetch(`0.0.0.0:3000/pages/${_id}`, { method: 'DELETE' }).then(() => fetchData());
     }
 
     return (

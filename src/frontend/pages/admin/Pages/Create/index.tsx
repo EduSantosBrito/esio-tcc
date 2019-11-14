@@ -40,7 +40,7 @@ function CreatePage({ isView, _id }: { isView?: boolean, _id?: string }) {
     }, [page]);
 
     function handleSubmit() {
-        fetch(!page ? 'http://localhost:3000/pages' : `http://localhost:3000/pages/${page._id}`, {
+        fetch(!page ? 'http://0.0.0.0:3000/pages' : `http://0.0.0.0:3000/pages/${page._id}`, {
             method: !page ? 'POST' : 'PUT',
             headers: {
                 Accept: 'application/json',

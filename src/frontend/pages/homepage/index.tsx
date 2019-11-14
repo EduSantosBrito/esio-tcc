@@ -7,7 +7,7 @@ import usePages from '../../hooks/usePages';
 
 const useStyles = makeStyles({
     heroImage: {
-        backgroundImage: `url('http://localhost:3000/static/capa_principal.jpg')`,
+        backgroundImage: `url('http://0.0.0.0:3000/static/capa_principal.jpg')`,
         height: '80vh',
         width: '100%',
     },

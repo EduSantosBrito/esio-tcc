@@ -13,7 +13,7 @@ import { IPost } from '../../../database/model/Post';
 const useStyles = makeStyles({
     heroImage: {
         height: '60vh',
-        backgroundImage: `url('http://localhost:3000/static/capa_blog.jpg')`,
+        backgroundImage: `url('http://0.0.0.0:3000/static/capa_blog.jpg')`,
         width: '100%',
         display: 'flex',
         alignItems: 'center',
