@@ -1,49 +1,62 @@
 import { IPage } from '../database/model/Page';
 
 declare global {
-    namespace NodeJS {
-        interface Global {
-            document: Document;
-            window: Window;
-            navigator: Navigator;
-        }
+  namespace NodeJS {
+    interface Global {
+      document: Document;
+      window: Window;
+      navigator: Navigator;
     }
+  }
 }
 
+
 function getHeadBoilerplate() {
-    return '<!DOCTYPE html><html lang="en"><head>';
+  return `<!DOCTYPE html><html lang="en"><head>${getGoogleAnalyticsTag()}`;
+}
+
+function getGoogleAnalyticsTag() {
+  return `<!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-152720975-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-152720975-1');
+  </script>`
 }
 
 function setMetaTags(page: IPage) {
-    return page.metas.map((meta) => {
-        const {
-            charset,
-            content,
-            httpEquiv,
-            name,
-        } = meta;
-        return `<meta ${charset ? `charset="${charset}"` : ''} ${content ? `content="${content}"` : ''} ${httpEquiv ? `http-equiv="${httpEquiv}"` : ''} ${name ? `name="${name}"` : ''}/>`;
-    }).join('');
+  return page.metas.map((meta) => {
+    const {
+      charset,
+      content,
+      httpEquiv,
+      name,
+    } = meta;
+    return `<meta ${charset ? `charset="${charset}"` : ''} ${content ? `content="${content}"` : ''} ${httpEquiv ? `http-equiv="${httpEquiv}"` : ''} ${name ? `name="${name}"` : ''}/>`;
+  }).join('');
 }
 
 function setDefaultMetaTags() {
-    return '<meta charset="utf-8"/>';
+  return '<meta charset="utf-8"/>';
 }
 
 function setStyleTag(css: string) {
-    return `<style id="jss-server-side">${css}</style><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />`;
+  return `<style id="jss-server-side">${css}</style><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />`;
 }
 
 function setTitleTag(page: IPage) {
-    return `<title>${page.title}</title>`;
+  return `<title>${page.title}</title>`;
 }
 
 function setStaticTitleTag(title: string) {
-    return `<title>${title}</title>`;
+  return `<title>${title}</title>`;
 }
 
 function getNormalizeStyle() {
-    return `/* Document
+  return `/* Document
     * ========================================================================== */
    
    /**
@@ -439,15 +452,15 @@ function getNormalizeStyle() {
 }
 
 function getBodyBoilerplate() {
-    return `<style>${getNormalizeStyle()}</style></head><body><div id="root"></div><script src="${process.env.API_URL}/static/bundle.js"></script></body></html>`;
+  return `<style>${getNormalizeStyle()}</style></head><body><div id="root"></div><script src="${process.env.API_URL}/static/bundle.js"></script></body></html>`;
 }
 
 async function getPageTemplate(page: IPage, css: string): Promise<string> {
-    return `${getHeadBoilerplate()}${setMetaTags(page)}${setStyleTag(css)}${setTitleTag(page)}${getBodyBoilerplate()}`;
+  return `${getHeadBoilerplate()}${setMetaTags(page)}${setStyleTag(css)}${setTitleTag(page)}${getBodyBoilerplate()}`;
 }
 
 async function getPagelessTemplate(css: string): Promise<string> {
-    return `${getHeadBoilerplate()}${setDefaultMetaTags()}${setStyleTag(css)}${setStaticTitleTag('Área administrativa')}${getBodyBoilerplate()}`;
+  return `${getHeadBoilerplate()}${setDefaultMetaTags()}${setStyleTag(css)}${setStaticTitleTag('Área administrativa')}${getBodyBoilerplate()}`;
 }
 
 export { getPageTemplate, getPagelessTemplate };
