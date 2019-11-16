@@ -16,10 +16,6 @@ RUN yarn
 # If you are building your code for production
 # RUN npm ci --only=production
 
-RUN ulimit -n 54000
-
-RUN ulimit -n
-
 # Bundle app source
 COPY . .
 
