@@ -3,7 +3,7 @@ import { IPost } from '../../database/model/Post';
 
 function usePosts() {
     const [posts, setPosts] = useState<IPost[] | []>([]);
-    const [loading, setLoading] = useState<boolean>(true);
+    const [loading, setLoading] = useState<boolean>(false);
 
     const fetchData = useCallback(() => {
         setLoading(true);

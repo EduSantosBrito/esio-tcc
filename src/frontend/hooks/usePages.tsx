@@ -3,7 +3,7 @@ import { IPage } from '../../database/model/Page';
 
 function usePages() {
     const [pages, setPages] = useState<IPage[] | []>([]);
-    const [loading, setLoading] = useState<boolean>(true);
+    const [loading, setLoading] = useState<boolean>(false);
 
     const fetchData = useCallback(() => {
         setLoading(true);
