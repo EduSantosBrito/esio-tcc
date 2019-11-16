@@ -10,8 +10,8 @@ function usePages() {
         fetch(`http://gameshowbrasil.com.br:3000/pages`)
             .then((result) => result.json())
             .then((result) => {
-                setLoading(false);
                 setPages(result);
+                setLoading(false);
             });
     }, []);
 

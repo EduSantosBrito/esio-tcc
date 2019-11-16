@@ -10,8 +10,8 @@ function usePosts() {
         fetch(`http://gameshowbrasil.com.br:3000/posts`)
             .then((result) => result.json())
             .then((result) => {
-                setLoading(false);
                 setPosts(result);
+                setLoading(false);
             });
     }, []);
 
