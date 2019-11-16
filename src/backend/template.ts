@@ -40,7 +40,7 @@ function setMetaTags(page: IPage) {
 }
 
 function setDefaultMetaTags() {
-  return '<meta charset="utf-8"/>';
+  return '<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />';
 }
 
 function setStyleTag(css: string) {
