@@ -7,7 +7,7 @@ function usePosts() {
 
     const fetchData = useCallback(() => {
         setLoading(true);
-        fetch(`http://0.0.0.0:3000/posts`)
+        fetch(`http://gameshowbrasil.com.br:3000/posts`)
             .then((result) => result.json())
             .then((result) => {
                 setPosts(result);

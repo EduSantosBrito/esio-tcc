@@ -13,7 +13,7 @@ import usePosts from '../../hooks/usePosts';
 const useStyles = makeStyles({
     heroImage: {
         height: '60vh',
-        backgroundImage: `url('http://0.0.0.0:3000/static/capa_blog.jpg')`,
+        backgroundImage: `url('http://gameshowbrasil.com.br:3000/static/capa_blog.jpg')`,
         width: '100%',
         display: 'flex',
         alignItems: 'center',

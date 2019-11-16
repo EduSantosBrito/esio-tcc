@@ -11,7 +11,7 @@ services:
     environment:
       NODE_ENV: development
       NODE_PORT: 3000
-      NODE_HOST: 0.0.0.0
+      NODE_HOST: http://gameshowbrasil.com.br
       MONGO_PORT: 27017
       MONGO_HOST: esio-mongo
       MONGO_DATABASE: esiodb

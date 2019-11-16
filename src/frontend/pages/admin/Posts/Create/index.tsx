@@ -34,7 +34,7 @@ function CreatePost({ isView, _id }: { isView?: boolean, _id?: string }) {
     }, [post]);
 
     function handleSubmit() {
-        fetch(!post ? 'http://0.0.0.0:3000/posts' : `http://0.0.0.0:3000/posts/${post._id}`, {
+        fetch(!post ? 'http://gameshowbrasil.com.br:3000/posts' : `http://gameshowbrasil.com.br:3000/posts/${post._id}`, {
             method: !post ? 'POST' : 'PUT',
             headers: {
                 Accept: 'application/json',

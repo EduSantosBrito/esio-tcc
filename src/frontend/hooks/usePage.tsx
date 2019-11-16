@@ -7,7 +7,7 @@ function usePage({ _id }: { _id?: string }) {
 
     const fetchData = useCallback(() => {
         setLoading(true);
-        fetch(`http://0.0.0.0:3000/pages/${_id}`)
+        fetch(`http://gameshowbrasil.com.br:3000/pages/${_id}`)
             .then((result) => result.json())
             .then((result) => {
                 setPage(result);

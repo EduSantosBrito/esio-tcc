@@ -20,7 +20,7 @@ function Posts() {
     }
 
     function handlePostDelete(_id) {
-        fetch(`http://0.0.0.0:3000/posts/${_id}`, { method: 'DELETE' }).then(() => fetchData());
+        fetch(`http://gameshowbrasil.com.br:3000/posts/${_id}`, { method: 'DELETE' }).then(() => fetchData());
     }
 
     return (
