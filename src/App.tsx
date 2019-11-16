@@ -31,6 +31,10 @@ function App() {
     }, [location, pages]);
 
     useEffect(() => {
+        console.log('DEBUG:: location', location.pathname);
+    }, [location])
+
+    useEffect(() => {
         const [matchedPost] = posts.filter((actualPost) => `/esio/${actualPost.uri}` === location.pathname);
         setPost(matchedPost);
     }, [location, posts]);
