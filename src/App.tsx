@@ -19,7 +19,7 @@ function App() {
     const [post, setPost] = useState<IPost | null>(null);
 
     const isAdminRoute = useCallback(() => /^\/esio\/admin/.test(location.pathname), [location]);
-    const isHomepageRoute = useCallback(() => /^\/esio\/$/.test(location.pathname), [location]);
+    const isHomepageRoute = useCallback(() => /^\/esio\/$/.test(location.pathname) || /^\/esio$/.test(location.pathname), [location]);
     useEffect(() => {
         if (!isAdminRoute() && !isHomepageRoute()) {
             const [matchedPage] = pages.filter((actualPage) => `/esio/${actualPage.uri}` === location.pathname);
@@ -29,10 +29,6 @@ function App() {
             setPage(matchedPage);
         }
     }, [location, pages]);
-
-    useEffect(() => {
-        console.log('DEBUG:: location', location.pathname);
-    }, [location])
 
     useEffect(() => {
         const [matchedPost] = posts.filter((actualPost) => `/esio/${actualPost.uri}` === location.pathname);
