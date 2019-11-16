@@ -12,7 +12,7 @@ declare global {
 
 
 function getHeadBoilerplate() {
-  return `<!DOCTYPE html><html lang="en"><head>${getGoogleAnalyticsTag()}`;
+  return `<!DOCTYPE html><html lang="pt-BR"><head>${getGoogleAnalyticsTag()}`;
 }
 
 function getGoogleAnalyticsTag() {
